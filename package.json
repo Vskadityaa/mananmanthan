@@ -2,20 +2,29 @@
   "name": "mananmanthan.com",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/Vskadityaa/mananmanthan#readme",
+  "bugs": {
+    "url": "https://github.com/Vskadityaa/mananmanthan/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vskadityaa/mananmanthan.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "deploy": "gh-pages -d public"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "body-parser": "^2.2.0",
     "express": "^5.1.0",
     "gh-pages": "^6.3.0",
     "xlsx": "^0.18.5"
-  }
+  },
+  "devDependencies": {}
 }
