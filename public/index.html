@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manan Manthan School of Indian Dance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.181);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    nav.scrolled {
+      background-color: #000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo img {
+      height: 60px;
+      border-radius: 10px;
+    }
+
+    .logo span {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #e91e63;
+    }
+
+    @keyframes zoomInOut {
+      0% { background-size: 100%; }
+      50% { background-size: 120%; }
+      100% { background-size: 100%; }
+    }
+
+    header {
+      background: url('m5.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 100px;
+      animation: zoomInOut 15s infinite ease-in-out;
+    }
+
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #fff;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+
+    header a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #cd4678;
+      padding: 12px 30px;
+      border-radius: 40px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      margin: 10px;
+      display: inline-block;
+    }
+
+    header a:hover {
+      background-color: #c2185b;
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .extra, .about, .classes, .contact, .register {
+      background-color: #222;
+      margin: 20px auto;
+      border-radius: 15px;
+      padding: 40px 20px;
+      max-width: 1000px;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #e91e63;
+    }
+
+    .class-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background-color: #333;
+      border-radius: 10px;
+      padding: 0;
+      width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 15px 0;
+      color: #e91e63;
+    }
+
+    form input, form select, form button {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      width: 100%;
+    }
+
+    form button {
+      background-color: #e91e63;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #c2185b;
+    }
+
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #222;
+      padding: 30px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 500px;
+      color: #fff;
+      text-align: left;
+    }
+
+    .close {
+      color: #fff;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #e91e63;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <img src="m1.jpg" alt="Logo">
+      <span>Manan Manthan School of Indian Dance</span>
+    </div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#classes">Classes</a></li>
+      <li><a href="#extra">Achievement</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Unleash Your Passion</h1>
+    <p style="color: #ffffff; font-weight: 700;">Embrace the Rhythm with Manan Manthan School of Indian Dance</p>
+  </header>
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>Welcome to Manan Manthan School of Indian Dance, where tradition meets expression. At our academy, we celebrate the rich heritage of Indian dance forms—blending classical grace with modern vibrance. Whether you're stepping into rhythm for the first time or refining your artistry, we offer a nurturing space to grow, learn, and shine. Our experienced instructors are passionate about passing on the timeless beauty of Kathak, Bharatanatyam, Folk, and fusion dance styles. We don’t just teach dance—we build confidence, discipline, and a lifelong love for movement. Join our vibrant community and let your journey of self-expression begin. With Manan and Manthan—feel the beat, find your soul.</p>
+  </section>
+
+  <section id="classes" class="classes">
+    <h2>Our Dance Classes</h2>
+    <div class="class-cards">
+      <div class="card" onclick="openModal('Kathak', 'Learn Kathak with grace, expressions, and rhythm.')">
+        <img src="m12.jpg" alt="Kathak">
+        <h3>Kathak</h3>
+      </div>
+      <div class="card" onclick="openModal('Zumba Arobic', 'Energetic routines and freestyle moves to boost your rhythm.')">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" alt="Zumba Arobic">
+        <h3>Zumba Arobic</h3>
+      </div>
+      <div class="card" onclick="openModal('Salsa', 'Passionate Latin beats and movement in our salsa sessions.')">
+        <img src="m20.jpg" alt="Salsa">
+        <h3>Salsa</h3>
+      </div>
+      <div class="card" onclick="openModal('Folk', 'Colorful and vibrant Indian traditional folk dances.')">
+        <img src="19.jpg" alt="Folk">
+        <h3>Folk</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="extra" class="extra">
+    <h2>Achievement</h2>
+    <div class="class-cards">
+      <div class="card" onclick="openModal('Contemporary', 'Fluid movement and creative expression through dance.')">
+        <img src="m11.jpg" alt="Contemporary">
+      </div>
+      <div class="card" onclick="openModal('Bollywood', 'High-energy routines with a desi twist!')">
+        <img src="m13.jpg" alt="Bollywood">
+      </div>
+      <div class="card" onclick="openModal('Bollywood', 'High-energy routines with a desi twist!')">
+        <img src="m14.jpg" alt="Bollywood">
+      </div>
+      <div class="card" onclick="openModal('Bollywood', 'High-energy routines with a desi twist!')">
+        <img src="15.jpg" alt="Bollywood">
+      </div>
+      <div class="card" onclick="openModal('Bollywood', 'High-energy routines with a desi twist!')">
+        <img src="m15.jpg" alt="Bollywood">
+      </div>
+      <div class="card" onclick="openModal('Bollywood', 'High-energy routines with a desi twist!')">
+        <img src="m17.jpg" alt="Bollywood">
+      </div>
+      <div class="card" onclick="openModal('Bollywood', 'High-energy routines with a desi twist!')">
+        <img src="m21.jpg" alt="Bollywood">
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p><img src="https://cdn-icons-png.flaticon.com/24/561/561127.png" style="vertical-align: middle;"> <a href="mailto:mananpanday1993@gmail.com">mananpanday1993@gmail.com</a></p>
+    <p><img src="https://cdn-icons-png.flaticon.com/24/455/455705.png" style="vertical-align: middle;"> +91 8840665076</p>
+    <p><img src="https://cdn-icons-png.flaticon.com/24/684/684908.png" style="vertical-align: middle;"> Jail Flame Restaurant, near Roadways, Azamgarh</p>
+    <p><img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" style="vertical-align: middle;"> <a href="https://www.instagram.com/manan_pandey01" target="_blank">@manan_pandey01</a></p>
+    <p><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" style="vertical-align: middle;"> <a href="https://www.facebook.com/Manan Pandey Manthan" target="_blank">@Manan Pandey Manthan</a></p>
+    <p><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" style="vertical-align: middle;"> <a href="https://wa.me/9598345338" target="_blank">Chat on WhatsApp</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Manthan Dance Academy | All Rights Reserved.
+  </footer>
+
+  <div id="classModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, description) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalDesc').textContent = description;
+      document.getElementById('classModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('classModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('classModal');
+      if (event.target == modal) {
+        closeModal();
+      }
+    };
+
+    window.addEventListener("scroll", () => {
+      const nav = document.querySelector("nav");
+      if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dance Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url("assets/m5.jpg") no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    .register {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px 30px;
+      border-radius: 15px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .register h2 {
+      margin-bottom: 25px;
+      font-size: 28px;
+      color: #00ff99;
+    }
+
+    .register form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .register input,
+    .register select,
+    .register button {
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .register input,
+    .register select {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    .register input::placeholder {
+      color: #aaa;
+    }
+
+    .register button {
+      background-color: #00ff99;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .register button:hover {
+      background-color: #00cc7a;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <section id="registration" class="register">
+    <h2>Register Now</h2>
+    <form id="registrationForm" action="/register" method="POST" onsubmit="showThankYouMessage(event)">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="text" name="address" placeholder="Address" required>
+      <select name="style" required>
+        <option value="" disabled selected>Select Dance Style</option>
+        <option>Kathak</option>
+        <option>Zumba Arobic</option>
+        <option>Salsa</option>
+        <option>Folk</option>
+        <option>Contemporary</option>
+        <option>Hip Hop</option>
+        <option>Semi Classical</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <script>
+    function showThankYouMessage(event) {
+      event.preventDefault();  // Prevent form submission for now
+
+      // Show alert
+      alert("Thank you for registering!");
+
+      // After the alert, submit the form manually
+      setTimeout(function() {
+        document.getElementById('registrationForm').submit();  // Submit the form after the alert
+      }, 500);  // Wait 500ms before submitting
+    }
+  </script>
+</body>
+</html>

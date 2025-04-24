@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: url('m11.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+
+/* Registration Form Container */
+.registration-form {
+  position: relative;
+  width: 600px;
+  height: auto;
+  background: #857f7f27;
+  padding: 40px 35px 60px;
+  box-sizing: border-box;
+  border: 1px solid rgb(103, 102, 102);
+  border-radius: 5px;
+  box-shadow: inset 0 0 1px #9c9c9c3b;
+}
+
+/* Title Text */
+.text {
+  font-size: 30px;
+  color: #c7c7c7;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+/* Form Styling */
+form {
+  margin-top: 20px;
+}
+
+form .field {
+  margin-top: 20px;
+  display: flex;
+  position: relative;
+}
+
+/* Icon inside Input Fields */
+.field .fas {
+  height: 50px;
+  width: 60px;
+  color: #868686;
+  font-size: 20px;
+  line-height: 50px;
+  border: 1px solid #444;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  background: linear-gradient(#333, #222);
+}
+
+/* Input Fields and Button */
+.field input,
+.field select,
+.field textarea,
+form button {
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 19px;
+  color: #868686;
+  padding: 0 15px;
+  border-radius: 0 5px 5px 0;
+  border: 1px solid #444;
+  caret-color: #339933;
+  background: linear-gradient(#333, #222);
+}
+
+/* Focus effect on inputs */
+input:focus,
+select:focus,
+textarea:focus {
+  color: #339933;
+  box-shadow: 0 0 5px rgba(0, 255, 0, .2),
+              inset 0 0 5px rgba(0, 255, 0, .1);
+  background: linear-gradient(#333933, #222922);
+  animation: glow .8s ease-out infinite alternate;
+}
+
+/* Glowing Animation */
+@keyframes glow {
+  0% {
+    border-color: #339933;
+    box-shadow: 0 0 5px rgba(0, 255, 0, .2),
+                inset 0 0 5px rgba(166, 162, 162, 0.142);
+  }
+  100% {
+    border-color: #6f6;
+    box-shadow: 0 0 20px rgba(0, 255, 0, .6),
+                inset 0 0 10px rgba(0, 255, 0, .4);
+  }
+}
+
+/* Register Button Styling */
+button {
+  margin-top: 30px;
+  border-radius: 5px !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 15px 0;
+}
+
+button:hover {
+  color: #339933;
+  border: 1px solid #339933;
+  box-shadow: 0 0 5px rgba(0, 255, 0, .3),
+              0 0 10px rgba(0, 255, 0, .2),
+              0 0 15px rgba(0, 255, 0, .1),
+              0 2px 0 rgba(111, 111, 111, 0.204);
+}
+
+/* Link Text */
+.link {
+  margin-top: 25px;
+  color: #868686;
+}
+
+.link a {
+  color: #339933;
+  text-decoration: none;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+/* Adjust input heights for select and textarea */
+select,
+textarea {
+  height: 50px;
+  padding: 0 15px;
+  font-size: 19px;
+  color: #868686;
+}
+
+/* Textarea Styling */
+textarea {
+  min-height: 100px;
+  resize: vertical;
+  border-radius: 5px;
+  background: linear-gradient(#3333332d, #22222230);
+}
+
+/* Field Specific Styling */
+.field select, .field textarea {
+  border-radius: 5px 0 0 5px;
+}
+
